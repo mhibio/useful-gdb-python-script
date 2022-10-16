@@ -34,6 +34,7 @@ gdb.execute("file ./a.out")
 gdb.execute("start")
 
 addr = 0x5555554009e0
-print(getReg("$rsp"))
-print(getDword(addr))
+print(getReg("rsp"))
+print(hex(getQword("$rsp")))
+print(hex(getDword(addr)))
 print(Parse2Array(addr, 0x100, _QWORD))
